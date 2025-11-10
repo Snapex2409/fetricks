@@ -1,0 +1,36 @@
+{% set name = "fetricksx" %}
+{% set version = "0.1.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  git_url: "https://github.com/Snapex2409/fetricks.git"
+  git_tag: "v0.1.0"
+
+build:
+  number: 0
+  skip: true
+  script:
+    - "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  build:
+    - python
+    - pip
+    - setuptools
+  host:
+    - python
+    - pip
+    - setuptools
+  run:
+    - python
+    - scipy
+    - scikit-learn
+    - meshio
+
+about:
+  home: "https://github.com/felipefr/fetricks"
+  license: "MIT License"
+  summary: "Finite elements tricks using FEniCS"
